@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQusery3_5_1.js"></script>
+    <style>
+        #shack {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            border-color: black;
+            border-style: solid;
+            margin: 0 auto;
+        }
+        
+        #book {
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: relative;
+            animation: myfirst 0.5s 1;
+            animation-direction: alternate;
+            position: relative;
+            border-color: black;
+            border-style: solid;
+            margin: 0 auto;
+        }
+        .abc{
+            color:yellow
+        }
+        .big1{
+            font-size: 50px;
+        }
+        #where {
+            position: relative;
+            border-color: red;
+            border-style: solid;
+        }
+        
+        @keyframes mymove {
+            0% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+            50% {
+                background: blue;
+                left: 200px;
+                top: 0px;
+            }
+            100% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        4 5 6
+    </div>
+    <div id="where">
+        <div id="shack"  class='abc'>123</div>
+    </div>
+    <div id="where">
+        <div id="book"></div>
+    </div>
+    <button id="ohoh">123456</button>
+    <button id="clickme">7878</button>
+
+    <script>
+        var list = [1, 2, 3, 4, 5, 6];
+        var tmp = list.pop();
+        var a = 5;
+        var b = 6;
+        var x = a > b;
+        console.log(x);
+        console.log(tmp);
+        console.log(list.length);
+        console.log(list);
+        list[list.length] = 7;
+        list[list.length] = touch()
+        console.log(list);
+        console.log($('#shack').css('font-size'))
+        $('#ohoh').click(function() {
+                $('#shack').animate({
+                    'left': '-=10px'
+                }, 100).animate({
+                    'left': '+=20px'
+                }, 100).animate({
+                    'left': '-=10px'
+                }, 100);
+                $('#shack').attr('class','abc big1');
+
+            })
+            // $("#clickme").click(function () {
+            //     $("#book").animate({
+            //         width: ["toggle", "swing"],
+            //         height: ["toggle", "swing"],
+            //         opacity: "toggle"
+            //     }, 5000, "linear", function () {
+            //         $(this).after("<div>Animation complete.</div>");
+            //     });
+            // });
+            // $("#clickme").click(function () {
+            //     $("#book").animate({
+            //         width: "toggle",
+            //         height: "toggle"
+            //     }, {
+            //         duration: 5000,
+            //         specialEasing: {
+            //             width: "linear",
+            //             height: "easeOutBounce"
+            //         },
+            //         complete: function () {
+            //             $(this).after("<div>Animation complete.</div>");
+            //         }
+            //     });
+            // });
+        $("#clickme").click(function() {
+            $("#book").animate({
+                opacity: 0.25,
+                left: "+=50",
+                // height: "toggle"
+            }, 5000, setTimeout(function() {
+                $('#shack').css('animation-name', 'normal')
+            }, 500));
+        });
+
+        function touch() {
+            switch (tmp) {
+                case 6:
+                    return 10;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

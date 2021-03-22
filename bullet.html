@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULLET</title>
+    <style>
+        @font-face {
+            font-family: oxxo;
+            src: url('font/PressStart2P-Regular.ttf');
+        }
+        
+        #front {
+            border: 1px solid lightskyblue;
+            font-family: oxxo;
+            position: relative;
+            height: 300px;
+            text-align: center;
+            /* color: cornsilk; */
+        }
+        
+        #front>h1 {
+            color: mediumblue;
+        }
+        
+        #below {
+            border: steelblue;
+            border-style: solid;
+            position: relative;
+            /* text-align: center; */
+            top: 200px;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        #card1 {
+            border: lime;
+            border-style: solid;
+            position: relative;
+            display: inline-block;
+            height: 100px;
+        }
+        
+        #card1:nth-child() #card2 {
+            border: red;
+            border-style: solid;
+            position: relative;
+            display: inline-block;
+            height: 100px;
+        }
+        
+        #front1 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border-radius: 7px;
+        }
+        
+        #back1 {
+            border-radius: 7px;
+            background-color: lightpink;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        
+        #front2 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            position: relative;
+            border-radius: 7px;
+            left: 125px;
+        }
+        
+        #back2 {
+            border-radius: 7px;
+            background-color: lightpink;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        
+        #exam {
+            width: 150px;
+            height: 200px;
+        }
+        
+        #exam1 {
+            border: 3px solid black;
+            border-radius: 7px;
+            box-shadow: 5px 5px 5px 5px gray;
+            width: 150px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            object-fit: contain;
+            background-color: white;
+        }
+        
+        #exam2 {
+            border: 3px solid black;
+            border-radius: 7px;
+            background-color: white;
+            width: 150px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            object-fit: contain;
+        }
+    </style>
+    <script src="js/jQusery3_5_1.js"></script>
+</head>
+
+<body>
+    <button id="show">show</button>
+    <br>
+    <button id="show1">show1</button>
+    <button id="show2">show2</button>
+    <br>
+    <button id="show3">show3</button>
+
+    <div id="front">
+        <h1>
+            Parallel Universe
+        </h1>
+        <div id="exam">
+            <img src="img/金探子.png" alt="" id="exam2">
+            <img src="img/pokeball.png" alt="" id="exam1">
+        </div>
+    </div>
+    <div id="below">
+        <div id="card1">
+            <div id="front1"></div>
+            <div id="back1"></div>
+        </div>
+        <div id="card2">
+            <div id="front2"></div>
+            <div id="back2"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        $(function() {
+            var i = 0;
+            var temp;
+            var moving = false;
+            $('#show').click(function() {
+                $('#show1').fadeOut();
+                $('#show2').hide();
+            })
+            $('#show3').click(function() {
+                $('#show1').show();
+                $('#show2').show();
+            })
+
+            $('img').click(function() {
+                if (moving == false) {
+                    opencard();
+                }
+
+            })
+
+            function opencard() {
+                moving = true;
+                temp = setInterval(function() {
+                    i += 5;
+                    $('#card1').css('transform', `rotatey(${i}deg)`);
+                    // $('#back1').css('transform', `rotatey(${i}deg)`);
+                    $('img').css('transform', `rotatey(${i}deg)`);
+                    if (i == 90) {
+                        $('#back1').css('visibility', 'hidden');
+                        $('#exam1').css('visibility', 'hidden');
+                        $('img').css('box-shadow', '0 0 0 0 white');
+                    } else if (i == 180) {
+                        i = 0
+                        closecard();
+                    }
+                }, 10)
+            }
+
+            function closecard() {
+                clearInterval(temp);
+            }
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+:root {
+    width: 1500px;
+    background-image: url("../img/717046.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: oxxo;
+    src: url('../font/PressStart2P-Regular.ttf');
+}
+
+#toparea {
+    font-family: oxxo;
+    position: relative;
+    text-align: center;
+    height: 300px;
+    top: 0;
+}
+
+#title {
+    font-size: 50px;
+    /* 讓字體可以是彩色的 */
+    background: linear-gradient(90deg, red, blue);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#start {
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid lightcoral;
+    border-radius: 5px;
+    color: black;
+    /* 讓按鈕變換更有動感 */
+    transition-duration: 0.4s;
+}
+
+#start:hover {
+    background-color: lightcoral;
+    color: white;
+}
+
+#restart {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    /* 讓按鈕變換更有動感 */
+    transition-duration: 0.4s;
+}
+
+#restart:hover {
+    background-color: lightcoral;
+    color: white;
+}
+
+#comp1 {
+    color: lightcoral;
+}
+
+#comp2 {
+    color: aqua;
+}
+
+#change {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    /* 讓按鈕變換更有動感 */
+    transition-duration: 0.4s;
+}
+
+#change:hover {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+#computer {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    /* 讓按鈕變換更有動感 */
+    transition-duration: 0.4s;
+}
+
+#computer:hover {
+    background-color: greenyellow;
+    color: white;
+}
+
+#score {
+    position: relative;
+    top: 30px;
+    color: goldenrod;
+    -webkit-text-stroke: 0.5px rgb(255, 238, 0);
+}
+
+#start, #change, #restart {
+    display: inline-block;
+}
+
+#comp {
+    font-size: 30px;
+    position: relative;
+    top: 30px;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+
+#point {
+    font-size: x-large;
+    position: relative;
+    top: 30px;
+    color: red;
+    -webkit-text-stroke: 0.5px rgb(252, 0, 218);
+}
+
+#point1, #point2 {
+    position: relative;
+}
+
+#dot {
+    font-size: 25px;
+}
+
+#belowarea {
+    position: relative;
+    text-align: center;
+}
+
+.fullcard {
+    position: relative;
+}
+
+.cardfront {
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    right: 5px;
+}
+
+.cardback {
+    border: 3px solid black;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px 5px gray;
+    width: 150px;
+    height: 200px;
+    position: relative;
+    object-fit: contain;
+    background-color: white;
+    color: lightcoral;
+}
+
+.cardback:hover {
+    cursor: pointer;
+}
+
+#firstroll div {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#secondroll div {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
