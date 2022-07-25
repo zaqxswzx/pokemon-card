@@ -1,5 +1,4 @@
 :root {
-    width: 1500px;
     background-image: url("../img/717046.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -13,10 +12,8 @@
 
 #toparea {
     font-family: oxxo;
-    position: relative;
     text-align: center;
-    height: 300px;
-    top: 0;
+    margin-bottom: 50px;
 }
 
 #title {
@@ -127,14 +124,12 @@
 }
 
 #belowarea {
-    position: relative;
+    margin-top: 20px;
     text-align: center;
 }
-
 .fullcard {
     position: relative;
 }
-
 .cardfront {
     width: 150px;
     height: 200px;
@@ -159,7 +154,12 @@
 .cardback:hover {
     cursor: pointer;
 }
-
+#firstroll,
+#secondroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #firstroll div {
     display: inline-block;
     margin-left: 10px;
